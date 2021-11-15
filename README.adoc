@@ -1,0 +1,45 @@
+= Softwareentwicklung im Team: Praktische Übung 2
+:icons: font
+:icon-set: fa
+:experimental:
+:source-highlighter: rouge
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+:stem: latexmath
+endif::[]
+
+== Ziele der Übung
+
+In der Übung sollen Sie Datenbankabfragen trainieren und den Umgang mit JDBC üben.
+
+== Aufgaben
+
+Am Anfang sollen Sie demonstrieren, dass Sie in der Lage sind, einfache SQL Queries zu schreiben. Für diesen Teil der Übung verwenden wir den anonymisierten AUAS Datensatz aus Woche 3. Stellen Sie sicher, dass Sie die Datenbank mit dem Datensatz auf Ihrem Computer laufen lassen können und dass Sie mit einem geeigneten Abfragewerkzeug (IntelliJ, DBeaver, ...) darauf Queries ausführen könnnen.  Probieren Sie die Queries in den Leitfragen von Blatt 3 aus um die Funktionsfähigkeit zu überprüfen. 
+
+Im zweiten Teil der Übung werden Sie einen Twitter Klon als datenbankbasierte Webanwendung entwickeln. Sie sollten zur Vorbereitung sicherstellen, dass Sie in der Lage sind, die Registrierungsanwendung in den Leitfragen von Blatt 3 (bzw. die Anwendung aus Übung 3) selber zu schreiben. 
+
+
+== Ablauf der Übung
+
+. Schalten Sie *mindestens* das Mikrofon, aber besser auch die Kamera, ein
+. Am Anfang gibt es eine kurze Vorstellungsrunde
+. Es wird festgelegt, in welcher Reihenfolge die "Driver" Rolle übernommen wird
+. Die erste Person teilt Ihren Screen und übernimmt mithilfe von `mob` die Session
+. Es wird an der Problemstellung gemeinsam gearbeitet nach den Regeln des Mob Programmings
+. Nach ca. der Hälfte der Zeit gibt es ein Feedback durch die Tutorin oder den Tutor
+. Es wird weiter an der Problemstellung gearbeitet
+. ca. 10 Minuten vor Ende der Session bekommen Sie Ihre Abschlussbewertung
+
+NOTE: Diese praktische Übung wird für die Zulassung gewertet.
+Sie müssen vorbereitet sein und einen hinreichenden Beitrag leisten.
+
+== Verhaltensregeln
+
+Wir erwarten von Ihnen einen respektvollen Umgang miteinander.
+Es gilt grundsätzlich bei uns der https://berlincodeofconduct.org/de/[Berlin Code of Conduct].
+Die TutorInnen haben die Aufgabe, die Einhaltung der Regeln zu überwachen und können bei Verstößen gegen den Verhaltenskodex Personen aus der praktischen Übung entfernen.
+

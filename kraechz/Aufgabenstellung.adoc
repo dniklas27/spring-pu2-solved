@@ -1,0 +1,42 @@
+= Softwareentwicklung im Team: Praktische Übung 2
+:icons: font
+:icon-set: fa
+:experimental:
+:source-highlighter: rouge
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+:stem: latexmath
+endif::[]
+
+== Aufgabe
+
+Wir wollen eine Microblogging-Anwendung mit dem Namen `Krächz` schreiben. In der Anwendung können wir eine Mitteilung mit bis zu 140 Zeichen krächzen.
+
+Der Rahmen der Anwendung ist bereits fertiggestellt und ist lauffähig, benutzt aber im Moment noch eine einfach Liste im Speicher. Ihre Aufgabe ist nun die Anbindung der echten Datenbank. Verwenden Sie als Datenbank MariaDB; Sie können ein Docker-Compose File aus dem Wochenblatt verwenden. Achten Sie ggf. darauf, den externen Port zu ändern, um keine Konflikte zu produzieren.   
+* Die Datenbank-Dependencies im `build.gradle` File sind noch auskommentiert. 
+* Die Verbindung zur Datenbank (entweder per `application.properties`, `application.yaml` oder als `DataSource` fehlt noch). Sie müssen auch Flyway noch konfigurieren.
+* Verwenden Sie Flyway, um die notwendigen Datenbanktabellen anzulegen. Nachträgliche Änderungen an den Strukturen müssen Sie ebenfalls per Flyway machen. 
+* Die Methoden in `KraechzRepository` müssen Sie ersetzen, so dass die Datenbank verwendet wird. Verwenden Sie `JDBCTemplate`.
+
+
+
+create table kraechz_post
+(
+handle varchar(255) not null,
+text varchar(140) null,
+id int
+);
+
+create unique index kraechz_post_id_uindex
+on kraechz_post (id);
+
+alter table kraechz_post
+add constraint kraechz_post_pk
+primary key (id);
+
+alter table kraechz_post modify id int auto_increment;
+
