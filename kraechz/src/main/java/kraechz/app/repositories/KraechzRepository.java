@@ -1,10 +1,9 @@
 package kraechz.app.repositories;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 import kraechz.app.models.Kraechz;
+import org.springframework.jdbc.core.DataClassRowMapper;
 import org.springframework.stereotype.Repository;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -16,18 +15,12 @@ public class KraechzRepository {
     this.db = db;
   }
 
-  private static Kraechz mapKraechz(ResultSet rs, int rowNum) throws SQLException {
-    String handle = rs.getString(1);
-    String text = rs.getString(2);
-    return new Kraechz(handle, text);
-  }
-
   public List<Kraechz> alle() {
     var allQuery = """
             SELECT handle, text FROM kraechz_posts
             """;
 
-    return db.query(allQuery, KraechzRepository::mapKraechz);
+    return db.query(allQuery, new DataClassRowMapper<>(Kraechz.class));
   }
 
   public List<Kraechz> filtereNachHandle(String name) {
@@ -36,7 +29,7 @@ public class KraechzRepository {
               WHERE p.handle = ?
             """;
 
-    return db.query(filterQuery, KraechzRepository::mapKraechz, name);
+    return db.query(filterQuery, new DataClassRowMapper<>(Kraechz.class), name);
   }
 
   public void save(Kraechz k) {
