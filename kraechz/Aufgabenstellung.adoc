@@ -21,22 +21,3 @@ Der Rahmen der Anwendung ist bereits fertiggestellt und ist lauffähig, benutzt 
 * Die Verbindung zur Datenbank (entweder per `application.properties`, `application.yaml` oder als `DataSource` fehlt noch). Sie müssen auch Flyway noch konfigurieren.
 * Verwenden Sie Flyway, um die notwendigen Datenbanktabellen anzulegen. Nachträgliche Änderungen an den Strukturen müssen Sie ebenfalls per Flyway machen. 
 * Die Methoden in `KraechzRepository` müssen Sie ersetzen, so dass die Datenbank verwendet wird. Verwenden Sie `JDBCTemplate`.
-
-
-
-create table kraechz_post
-(
-handle varchar(255) not null,
-text varchar(140) null,
-id int
-);
-
-create unique index kraechz_post_id_uindex
-on kraechz_post (id);
-
-alter table kraechz_post
-add constraint kraechz_post_pk
-primary key (id);
-
-alter table kraechz_post modify id int auto_increment;
-
